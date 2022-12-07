@@ -39,21 +39,11 @@
 <body class="animsition">
     <?php 
     session_start();
-    if (!isset($_SESSION['userlevel'])) 
-    {
-        if ($_SESSION['userlevel'] == "admin") 
-        {
-            
-        }
-        
-    }else if($_SESSION['userlevel'] == "user") {
-             header("location: index.php");
+    if (!isset($_SESSION['username'])) {
+        header("location: index.php");
+    }else {
+        $username = $_SESSION['username'];  
     }
-
-    if(!isset($_SESSION['userlevel'])){ 
-    header("location: ../awal.php");
-}
-
 
  ?>
     <div class="page-wrapper">
